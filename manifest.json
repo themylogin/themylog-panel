@@ -1,0 +1,36 @@
+{
+    "name": "themylog panel",
+    "description": "themylog panel",
+    "version": "0.1",
+    "manifest_version": 2,
+    "app": {
+        "background": {
+            "scripts": ["background.js"]
+        }
+    },
+    "commands": {
+        "read_sms": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+1"
+            },
+            "description": "Mark SMS as read",
+            "global": true
+        },
+        "toggle_disorders_mode": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+2"
+            },
+            "description": "Toggle disorders display mode",
+            "global": true
+        }
+    },
+    "permissions": [
+        "storage"
+    ],
+    "sockets": {
+        "tcp": {
+            "connect": "192.168.0.1:46404"
+        }
+    },
+    "icons": { "16": "themylog-panel-16.png", "128": "themylog-panel-128.png" }
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <title>themylog panel</title>
+    <meta charset="UTF-8" />
+
+    <style type="text/css">
+        * { margin: 0; padding: 0; }
+
+        body
+        {
+            color: #505050;
+            font: 11px/1.25em "Liberation Sans";
+        }
+
+        #wrapper
+        {
+            width: 280px;
+            height: 584px;
+            overflow: hidden;
+            position: relative;
+
+            background: #e7e7e7;
+        }
+
+        #tv-shows
+        {
+            margin: 8px 8px 0;
+        }
+            #tv-shows th:first-child
+            {
+                text-align: left;
+                padding-left: 4px;
+            }
+            #tv-shows td:first-child
+            {
+                width: 142px
+            }
+            #tv-shows td
+            {
+                padding: 2px 4px;
+                height: 16px;
+                width: 28px;
+            }
+            #tv-shows td.downloading
+            {
+                background: url(tv-show-downloading.png) 10px 0px no-repeat;
+            }
+            #tv-shows td.downloaded
+            {
+                background: url(tv-show-downloaded.png) 10px 0px no-repeat;
+            }
+            #tv-shows .sub
+            {
+                display: block;
+                float: left;
+                width: 14px;
+                height: 16px;
+            }
+            #tv-shows .sub-en
+            {
+                background: url(us.png);
+            }
+            #tv-shows .sub-ru
+            {
+                background: url(ru.png);
+            }
+
+        #music
+        {
+            padding-top: 2px;
+        }
+        #music:empty
+        {
+            display: none;
+        }
+            #music li
+            {
+                padding: 3px 4px 5px 23px;
+                background: url(music.png) 4px 0px no-repeat;
+            }
+                #music li:hover
+                {
+                    text-decoration: underline;
+                }
+
+        #sms
+        {
+        }
+            #sms li
+            {
+                background: url(sms.png) 11px 12px no-repeat;
+                padding: 12px 12px 12px 45px;
+
+                border-bottom: 1px solid #9a9a9a;
+            }
+                #sms li .from
+                {
+                    display: inline-block;
+                    font-weight: 800;
+                    font-size: 13px;
+
+                     -webkit-user-select: text;
+                }
+                #sms li .time
+                {
+                    display: inline-block;
+                    font-size: 9px;
+
+                    padding-left: 4px;
+                }
+                #sms li .text
+                {
+                    -webkit-user-select: text;
+                }
+                    #sms li .text .highlight
+                    {
+                        background: #fce94f;
+                    }
+
+                #sms li:last-child
+                {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+
+        #disorders
+        {
+            padding-top: 6px;
+        }
+            #disorders li
+            {
+                background: none 11px 0px no-repeat;
+                padding: 6px 12px 6px 38px;
+            }
+                #disorders li.ok
+                {
+                    background-image: url(disorder-ok.png);
+                }
+                #disorders li.error
+                {
+                    background-image: url(disorder-error.png);
+                }
+                #disorders li.not-functional
+                {
+                    background-image: url(disorder-not-functional.png);
+                }
+
+                #disorders li .text
+                {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                #disorders li .time
+                {
+                    float: right;
+                    font-size: 9px;
+                    padding-top: 1px;
+                }
+
+                #disorders li div.reason
+                {
+                    padding-top: 5px;
+                    font-style: italic;
+                    white-space: pre-wrap;
+                }
+
+                #disorders li ul.reason
+                {
+                    margin-left: -3px;
+                }
+
+                    #disorders li li
+                    {
+                        background-position: 0 0;
+                        padding: 6px 0 6px 27px;
+                    }
+                    #disorders li li.first-child
+                    {
+                        background-position: 0 6px;
+                        padding-top: 12px;
+                    }
+                    #disorders li li.last-child
+                    {
+                        margin-bottom: -6px;
+                    }
+    </style>
+
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="window.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul id="music"></ul>
+        <ul id="tv-shows"></ul>
+        <ul id="sms"></ul>
+        <ul id="disorders"></ul>
+    </div>
+</body>
+</html>
