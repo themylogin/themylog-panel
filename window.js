@@ -344,8 +344,8 @@ $(function(){
             $disorders.empty();
             $.each($.parseJSON(event.data), function(i, maybe){
                 $disorders.append(createDisorder(maybe));
-                showHideDisorders();
             });
+            showHideDisorders();
         }
     };
     on_error = function(){
