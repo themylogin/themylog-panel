@@ -243,9 +243,12 @@ $(function(){
                 var text = item["explanation"]
 
                 text = _.escape(text).replace(/\n/g, "<br />");
-                $.each([/Parol dlya vhoda.*?([0-9]+)/,
+                $.each([
+                        /Parol dlya vhoda.*?([0-9]+)/,
                         /kod podtverzhdeniya.*?([0-9]+)(\.|;)/i,
-                        /Код:([0-9]+) сумма:[0-9]/], function(i, regexp){
+                        /parol:.*?([0-9]+)/i,
+                        /Код:([0-9]+) сумма:[0-9]/
+                        ], function(i, regexp){
                     var m = text.match(regexp);
                     if (m)
                     {
